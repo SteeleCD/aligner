@@ -1,3 +1,2 @@
 #!/bin/bash
-
-g++ ./main.cpp ./align.cpp
+g++ src/main.cpp src/assembly.cpp src/centralDogma.cpp
