@@ -26,7 +26,7 @@ int main()
     // predict frame
     int frame = centDog.predictFrame(rnaseq);
     // convert to protein
-    protein = centDog.RNAtoProtein(rnaseq.substr(frame));
+    protein = centDog.RNAtoProtein(rnaseq);
     cout << "Protein Sequence: \n";
     centDog.PrintSequence(protein);
     // estimate ORFs

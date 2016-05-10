@@ -29,7 +29,6 @@ class centralDogma
         std::string RNAtoProtein (std::string RNASEQ);
         std::string FindORFS (std::string protein);
         int StopTotal (std::string seq);
-	int predictFrame (std::string RNAseq);
     };
 
 #endif  // __MYCLASS_H_INCLUDED__

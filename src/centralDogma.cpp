@@ -110,6 +110,31 @@ string centralDogma::FindORFS (string protein) {
   return ORF2;
 }
 
+// predict frame
+int centralDogma::predictFrame (string RNAseq)
+	{
+	string protein;
+	int nStops, minStops, frame;
+	for(int i=0; i<3; i++)
+		{
+		protein = RNAtoProtein(RNAseq.substr(i));
+		nStops = StopTotal(protein);
+		if(i==0)
+			{
+			frame=i;
+			minStops = nStops;
+			} else {
+			if(nStops<minStops)
+				{
+				frame = i;
+				minStops = nStops;
+				}
+			}
+		}
+	cout << "Estmimated frame: " << frame << " with " << minStops << " stops\n";
+	return frame;
+	}
+
 int centralDogma::StopTotal (string seq)
 {
   int NumStops = 0;
